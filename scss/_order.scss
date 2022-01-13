@@ -1,0 +1,102 @@
+.order {
+	padding: 100px 0 45px;
+}
+.order__container {
+	@include flex(space-between, center);
+}
+.order__text {
+	width: 50%;
+	max-width: 565px;
+	text-align: center;
+}
+.order-form {
+	@include flex(space-between, center);
+	input {
+		width: calc(50% - 5px);
+		margin-bottom: 10px;
+		border-radius: 5px;
+		background: $gray;
+		border: 1px solid transparent;
+		outline: none;
+		height: 60px;
+		padding: 0 20px;
+		font-size: 14px;
+		&::placeholder{
+			color: $gray-opacity;
+		}
+		&:focus {
+			border: 1px solid $yellow;
+		}
+	}
+	.order__select {
+		width: calc(50% - 5px);
+		margin-bottom: 10px;
+		position: relative;
+		&::after{
+			content: "";
+			width: 20px;
+			height: 20px;
+			background: url(../img/select-arrow.svg) center no-repeat;
+			position: absolute;
+			right: 10px;
+			top: calc(50% - 10px);
+			pointer-events: none;
+		}
+		select {
+			width: 100%;
+			background: $gray;
+			border: 1px solid transparent;
+			height: 60px;
+			padding: 0 20px;
+			font-size: 14px;
+			outline: none;
+			border-radius: 5px;
+			appearance: none;
+			&:not(:valid) {
+				color: $gray-opacity;
+			}
+		}
+		option {
+			color: $color;
+		}
+	}
+	button {
+		width: 100%;
+		background: $yellow;
+		border: none;
+		cursor: pointer;
+		font-weight: bold;
+		font-style: 12px;
+		color: $white;
+		border-radius: 5px;
+		height: 60px;
+		text-transform: uppercase;
+		transition: 0.3s;
+		&:hover {
+			background: darken($yellow, 10%);
+		}
+	}
+}
+.order__img {
+	width: 50%;
+	max-width: 500px;
+	position: relative;
+	.circle {
+		right: 0;
+		transform: translate(40%, -50%);
+	}
+	img {
+		@include img;
+	}
+}
+.order__contacts {
+	font-style: 12px;
+	line-height: 12px;
+	color: $gray-opacity;
+	text-align: center;
+	padding-top: 45px;
+	a {
+		color: $gray-opacity;
+		font-weight: 700;
+	}
+}
